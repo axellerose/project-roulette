@@ -29,7 +29,10 @@ The game is infinite, but player becomes a winner if the score is over 5000
 - Show score
 - Show a message for win/loose
 
-### Backlog:  <a href="https://trello.com/invite/b/YRjOtWIM/e253c93cee2905a1165f84f58e8db838/project">Trello Link</a>
+
 
 ### Links
-<a href="https://github.com/axellerose/project-roulette">Git Repository</a>
+<ul>
+<li><a href="https://github.com/axellerose/project-roulette">Git Repository</a></li>
+<li><a href="https://trello.com/invite/b/YRjOtWIM/e253c93cee2905a1165f84f58e8db838/project">TrelloBacklog Link</a></li>
+</ul>
