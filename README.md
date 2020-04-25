@@ -29,7 +29,7 @@ The game is infinite, but player becomes a winner if the score is over 5000
 - Show score
 - Show a message for win/loose
 
-## Backlog:
+## Backlog:  <a href="https://trello.com/invite/b/YRjOtWIM/e253c93cee2905a1165f84f58e8db838/project">Trello Link</a>
 - Add table and player icon
 - Add background
 - Add add music and sound effects
