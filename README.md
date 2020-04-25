@@ -24,16 +24,18 @@ The game is infinite, but player becomes a winner if the score is over 5000
 ## MVP 
 
 - Enter the bet amount and press on of 4 buttons to play 
-- Show a message for win/loose
 - Have a roulette wheel not spinning
 - Show color 
 - Show score
+- Show a message for win/loose
 
 ## Backlog:
+- Add table and player icon
 - Add background
 - Add add music and sound effects
 - Turn off music and sound effects
 - Visual effects for win/lose bet
 - Introduce a nickname
 - Save score on the leaderboard
-- Speed x2 x3
+- Roulette speed x2 x3
+
