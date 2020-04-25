@@ -1,8 +1,13 @@
-# project-roulette
-
-Roulette of Colors
+# Roulette of Colors
 
 ## Description:
+
+My first project on Ironhack Fullstack course is a roulette that has colors instead of numbers.
+Player has to enter amount to bet and choose 1 of 4 colored buttons to spin the roulette.
+The game is infinite, but player becomes a winner if the score is over 5000
+
+
+## Rules of a game
 
 - A roulette is divivded into 36 sections of 4 colors: 
     - 14 red (payout 1 to 2) 
@@ -12,15 +17,23 @@ Roulette of Colors
 - User has $1000 to play
 - User selects a section and enter the amount of $
 - User can press on a button with corresponding color to spin
+- Game ends if a balance goes 0
+- Game won if a score is over $5000
+- During the game a music is played and sound effects are enabled
 
+## MVP 
 
+- Enter the bet amount and press on of 4 buttons to play 
+- Show a message for win/loose
+- Have a roulette wheel not spinning
+- Show color 
+- Show score
 
-
-
-TODO:
-- buttons or input to bet: 1-36
-- initial cash
-- input for bet
-- randomize a number 1-36
-- compare randomNumber with bet number
-- if randomNumber = betNumber => betAmount * 36
+## Backlog:
+- Add background
+- Add add music and sound effects
+- Turn off music and sound effects
+- Visual effects for win/lose bet
+- Introduce a nickname
+- Save score on the leaderboard
+- Speed x2 x3
