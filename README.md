@@ -25,17 +25,11 @@ The game is infinite, but player becomes a winner if the score is over 5000
 
 - Enter the bet amount and press on of 4 buttons to play 
 - Have a roulette wheel not spinning
-- Show color 
+- Show result
 - Show score
 - Show a message for win/loose
 
-## Backlog:  <a href="https://trello.com/invite/b/YRjOtWIM/e253c93cee2905a1165f84f58e8db838/project">Trello Link</a>
-- Add table and player icon
-- Add background
-- Add add music and sound effects
-- Turn off music and sound effects
-- Visual effects for win/lose bet
-- Introduce a nickname
-- Save score on the leaderboard
-- Roulette speed x2 x3
+### Backlog:  <a href="https://trello.com/invite/b/YRjOtWIM/e253c93cee2905a1165f84f58e8db838/project">Trello Link</a>
 
+### Links
+<a href="https://github.com/axellerose/project-roulette">Git Repository</a>
