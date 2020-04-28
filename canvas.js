@@ -1,6 +1,5 @@
 const canvas = document.getElementById("roulette");
-
-
+//Array of objects ???
 var colors = [
     "red", "black", "blue",
     "red", "black", "blue",
@@ -13,7 +12,8 @@ var colors = [
     "red", "black", "blue",
     "red", "black", "blue",
     "red", "black", "blue",
-    "red", "black", "blue",];
+    "red", "black", "blue",
+];
 
 var startAngle = 0;
 var arc = Math.PI / 18;
@@ -32,8 +32,7 @@ function drawRouletteWheel() {
 
         ctx.beginPath();
         ctx.arc(250, 250, outsideRadius, angle, angle + arc);
-        ctx.arc(250, 250, insideRadius, angle, angle + arc);
-        
+        ctx.arc(250, 250, insideRadius, angle, angle + arc);   
         ctx.stroke();
         ctx.fill();
     }
@@ -56,9 +55,9 @@ function spin() {
     spinTime = 0;
     spinTimeTotal = Math.random() * 3 + 4 * 1000;
     rotateWheel();
-  }
+}
 
-  function rotateWheel(){
+function rotateWheel(){
     spinTime += 30;
     if(spinTime >= spinTimeTotal) {
       stopRotateWheel();
@@ -68,22 +67,36 @@ function spin() {
     startAngle += (spinAngle * Math.PI / 180);
     drawRouletteWheel();
     spinTimeout = setTimeout('rotateWheel()', 30);
-  }
-  //Wheel stops at index
-  function stopRotateWheel() {
+}
+
+function stopRotateWheel() {
     clearTimeout(spinTimeout);
+    //Calculate sectorIndex of a sector
     var degrees = startAngle * 180 / Math.PI + 90;
     var arcd = arc * 180 / Math.PI;
-    var index = Math.floor((360 - degrees % 360) / arcd);
-    alert(index);
-    console.log(index)
-  }
-  
-  function easeOut(t, b, c, d) {
+    var sectorIndex = Math.floor((360 - degrees % 360) / arcd);
+    console.log(sectorIndex);
+    showResult(sectorIndex);
+}
+ 
+function easeOut(t, b, c, d) {
     var ts = (t/=d)*t;
     var tc = ts*t;
     return b+c*(tc + -3*ts + 3*t);
-  }
+}
+//How to not hardcode here? Use switch
+function showResult(index){
+    let result = document.querySelector(".result");
+    if (colors[index] == "black") {
+        result.innerHTML = "Winner sector is: BLACK"
+    } else if (colors[index] == "red") {
+        result.innerHTML = "Winner sector is: RED";
+    } else if (colors[index] == "blue") {
+        result.innerHTML = "Winner sector is: BLUE";
+    } else if (colors[index] == "gold") {
+        result.innerHTML = "Winner sector is: GOLD";
+    }
+}
 
 window.addEventListener("load", event => {
     drawRouletteWheel();
