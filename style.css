@@ -17,8 +17,5 @@ body {
 
 .rightSide {
     border: 2px solid black;
-    background-image: url("../img/roulette.png");
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
