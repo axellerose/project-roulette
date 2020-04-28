@@ -7,7 +7,7 @@ Player has to enter amount to bet and choose 1 of 4 colored buttons to spin the 
 The game is infinite, but player becomes a winner if the score is over 5000
 
 
-## Rules of a game
+## Rules of the game
 
 - A roulette is divivded into 36 sections of 4 colors: 
     - 14 red (payout 1 to 2) 

@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Roulette of Colors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="main">
+        <div class="leftSide column-vertical">
+            <h1>Roulette of Colors</h1>
+            <div class="balance">$<span>1000</span></div>
+            <input type="number" placeholder="0">
+            <button class="btn play" value="spin">PLAY</button>
+        </div>
+        <div class="rightSide">
+            <canvas id="roulette" width="500px" height="500px"></canvas>
+        </div>
+    </div>
 
-    <canvas id="roulette" width="device-width * 0.3" height="device-height * 0.3"></canvas>
-    
+    <!------------------------  BUTTONS TO MAKE A BET  ------------------------------>
+    <div class="bottom row">
+        <div class="red column-vertical">
+            <h2>x2</h2>
+            <button class="btn btn-red">RED</button>
+        </div>
+        <div class="black column-vertical">
+            <h2>x2</h2>
+            <button class="btn btn-black">BLACK</button>
+        </div>
+        <div class="btn column-vertical">
+            <h2>x5</h2>
+            <button class="btn btn-blue">BLUE</button>
+        </div>
+        <div class="red column-vertical">
+            <h2>x100</h2>
+            <button class="btn btn-gold">GOLD</button>
+        </div>
+    </div>
+
+    <script src="game.js" src="canvas.js"></script>
 </body>
 </html>

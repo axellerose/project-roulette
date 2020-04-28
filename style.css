@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 1em;
+}
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.rightSide {
+    border: 2px solid black;
+    background-image: url("../img/roulette.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
