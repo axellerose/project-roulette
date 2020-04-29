@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 1em;
+    background-color: #1c1c1c;
+    color: #c8d6e5;
 }
 
 .main {
@@ -15,7 +17,4 @@ body {
     flex-direction: row;
 }
 
-.rightSide {
-    border: 2px solid black;
-}
 

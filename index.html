@@ -11,7 +11,7 @@
         <div class="leftSide column-vertical">
             <h1>Roulette of Colors</h1>
             <div class="balance">$<span>1000</span></div>
-            <input class="" type="number" min="0" placeholder="0">
+            <input class="make-bet" type="number" min="0" placeholder="0">
             <button class="btn play" value="spin" onclick="spin()">PLAY</button>
             <div class="bet">No bet for now</div>
             <div class="result">No results for now</div>
@@ -25,19 +25,19 @@
     <div class="bottom row">
         <div class="red column-vertical">
             <h2>x2</h2>
-            <button class="btn btn-red">RED</button>
+            <button class="btn btn-red" onclick="player.onColorClick('#ff6b6b')">RED</button>
         </div>
         <div class="black column-vertical">
             <h2>x2</h2>
-            <button class="btn btn-black">BLACK</button>
+            <button class="btn btn-black" onclick="player.onColorClick('#222f3e')">BLACK</button>
         </div>
         <div class="btn column-vertical">
             <h2>x5</h2>
-            <button class="btn btn-blue">BLUE</button>
+            <button class="btn btn-blue" onclick="player.onColorClick('#2e86de;')">BLUE</button>
         </div>
         <div class="red column-vertical">
             <h2>x100</h2>
-            <button class="btn btn-gold">GOLD</button>
+            <button class="btn btn-gold" onclick="player.onColorClick('#ff9f43')">GOLD</button>
         </div>
     </div>
 

@@ -1,19 +1,28 @@
+/* Roulette colors:
+blue - #2e86de;
+red - #ff6b6b;
+black - #222f3e;
+gold - #ff9f43
+
+*/
 const canvas = document.getElementById("roulette");
 //Array of objects ???
 var colors = [
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "gold",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
-    "red", "black", "blue",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#ff9f43",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
+    "#ff6b6b", "#222f3e", "#2e86de",
 ];
+
+let player = new Player("alex", 10000);
 
 var startAngle = 0;
 var arc = Math.PI / 18;
@@ -23,7 +32,7 @@ function drawRouletteWheel() {
     let outsideRadius = 200;
     let insideRadius = 0;
     ctx.clearRect(0,0,500,500);
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = "#222f3e";
     ctx.lineWidth = 2;
     
     for (let i = 0; i < 36; i++){
@@ -37,7 +46,7 @@ function drawRouletteWheel() {
         ctx.fill();
     }
     //Draw arrow
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "#c8d6e5";
     ctx.beginPath();
     ctx.moveTo(250 - 7, 250 - (outsideRadius + 8));
     ctx.lineTo(250 + 7, 250 - (outsideRadius + 8));
@@ -55,6 +64,7 @@ function spin() {
     spinTime = 0;
     spinTimeTotal = Math.random() * 3 + 4 * 1000;
     rotateWheel();
+    console.log(player.colorPressed)
 }
 
 function rotateWheel(){
@@ -77,6 +87,7 @@ function stopRotateWheel() {
     var sectorIndex = Math.floor((360 - degrees % 360) / arcd);
     console.log(sectorIndex);
     showResult(sectorIndex);
+    checkWinner(sectorIndex);
 }
  
 function easeOut(t, b, c, d) {
@@ -87,16 +98,28 @@ function easeOut(t, b, c, d) {
 //How to not hardcode here? Use switch
 function showResult(index){
     let result = document.querySelector(".result");
-    if (colors[index] == "black") {
-        result.innerHTML = "Winner sector is: BLACK"
-    } else if (colors[index] == "red") {
+    if (colors[index] == "#222f3e") {
+        result.innerHTML = "Winner sector is: BLACK";
+    } else if (colors[index] == "#ff6b6b") {
         result.innerHTML = "Winner sector is: RED";
-    } else if (colors[index] == "blue") {
+    } else if (colors[index] == "#2e86de") {
         result.innerHTML = "Winner sector is: BLUE";
     } else if (colors[index] == "gold") {
         result.innerHTML = "Winner sector is: GOLD";
     }
 }
+
+//Check if two colors are the same
+function checkWinner(index){
+    if (colors[index] == player.colorPressed){
+        alert("You win!");
+        return true;
+    } else {
+        alert("You loose!");
+        return false;
+    }
+}
+
 
 window.addEventListener("load", event => {
     drawRouletteWheel();
