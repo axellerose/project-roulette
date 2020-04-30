@@ -13,7 +13,7 @@ The game is infinite, but player becomes a winner if the score is over 5000
     - 14 red (payout 1 to 2) 
     - 14 black (payout 1 to 2)
     - 7 blue (payout 1 to 5)
-    - 1 gold (payout 1 to 100)
+    - 1 gold (payout 1 to 50)
 - User has $1000 to play
 - User selects a section and enter the amount of $
 - User can press on a button with corresponding color to spin

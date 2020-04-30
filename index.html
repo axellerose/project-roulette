@@ -13,9 +13,16 @@
             <h1>Roulette of Colors</h1>
             <div class="playerName">player</div>
             <div class="balance">$<span id="cash">1000</span></div>
+
+            <div class="input-group mb-3">
+                <input class="make-bet" id="userInput" type="number" min="0" placeholder="0">
+                <div class="save-bet">
+                  <button class="btn btn-secondary" id="subButton" onclick="player.onBetClick()">SAVE BET</button>
+                </div>
+              </div> 
             
-            <input class="make-bet" type="number" min="0" placeholder="0">
-            <button class="btn play" value="spin" onclick="spin()">PLAY</button>
+            
+            <button class="btn play" value="spin" onclick="onPlayPressed()">PLAY</button>
 
 
             <div class="bet">No bet for now</div>
@@ -41,7 +48,7 @@
             <button class="btn btn-blue" onclick="player.onColorClick('#2e86de')">BLUE</button>
         </div>
         <div class="red column-vertical">
-            <h2>x100</h2>
+            <h2>x50</h2>
             <button class="btn btn-gold" onclick="player.onColorClick('#ff9f43')">GOLD</button>
         </div>
     </div>

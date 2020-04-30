@@ -1,3 +1,4 @@
+
 class Player {
     constructor (name, balance) {
         this.name = name;
@@ -11,16 +12,29 @@ class Player {
         let red = "#ff6b6b";
         let black = "#222f3e";
         let gold = "#ff9f43";
-        let betStatus = document.querySelector(".bet")
+        let betStatus = document.querySelector(".bet");
         this.colorPressed = color;
         if (color == "#2e86de"){
-            betStatus.innerHTML = `Your bet is BLUE`;
+            betStatus.innerHTML = `Your bet is ${this.betMade} for BLUE`;
         } else if (color == "#ff6b6b"){
-            betStatus.innerHTML = `Your bet is RED`;
+            betStatus.innerHTML = `Your bet is ${this.betMade} for RED`;
         } else if (color == "#222f3e"){
-            betStatus.innerHTML = `Your bet is BLACK`;
+            betStatus.innerHTML = `Your bet is ${this.betMade} for BLACK`;
         } else if (color == "#ff9f43"){
-            betStatus.innerHTML = `Your bet is GOLD`;
+            betStatus.innerHTML = `Your bet is ${this.betMade} for GOLD`;
         }
     } 
+
+    onBetClick() {
+        let userInput = document.getElementById('userInput').value;
+        console.log(userInput);
+        this.betMade = userInput;
+        this.balance -= this.betMade;
+        playerBalance.innerHTML = this.balance;
+        this.setUserInput(0);
+    }
+    
+    setUserInput(number) {
+        document.getElementById('userInput').value = number;
+    }
 }
