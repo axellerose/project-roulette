@@ -1,4 +1,4 @@
-/* Roulette colors:
+/*
 blue - #2e86de;
 red - #ff6b6b;
 black - #222f3e;
@@ -26,6 +26,7 @@ let playerName = document.querySelector(".playerName");
 playerName.innerHTML = player.name; //show name
 let playerBalance = document.querySelector(".balance span");
 playerBalance.innerHTML = player.balance; //show balance
+
 
 
 let startAngle = 0;
@@ -63,11 +64,13 @@ function drawRouletteWheel() {
     ctx.fill();
 }
 
-function onPlayPressed() {
+function onPlayClick() {
     spinAngleStart = Math.random() * 10 + 10;
     spinTime = 0;
     spinTimeTotal = Math.random() * 3 + 4 * 1000;
     rotateWheel();
+    disablePlayButton();
+    enableBetButton();
 }
 
 function rotateWheel(){
@@ -138,8 +141,10 @@ function checkWinner(index){
 }
 
 
-
-document.getElementById('subButton').addEventListener('click', userInput, false);
+document.getElementById('bet-btn').addEventListener('click', userInput, false);
 window.addEventListener("load", event => {
     drawRouletteWheel();
+    disableColorButtons();
+    disablePlayButton();
+    enableBetButton();
 });

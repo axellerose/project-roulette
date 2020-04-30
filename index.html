@@ -12,21 +12,26 @@
         <div class="leftSide column-vertical">
             <h1>Roulette of Colors</h1>
             <div class="playerName">player</div>
-            <div class="balance">$<span id="cash">1000</span></div>
-
-            <div class="input-group mb-3">
-                <input class="make-bet" id="userInput" type="number" min="10" placeholder="10">
+            <br> <!-- Delete it later-->
+            <div class="balance">Current ballance: $<span id="cash">1000</span></div>
+            <br> <!-- Delete it later-->
+            <br> <!-- Delete it later-->
+            <div class="input-group">
+                <input class="make-bet" id="userInput" type="number" min="50" step="50" value="50" placeholder="50">
+                <br> <!-- Delete it later-->
                 <div class="save-bet">
-                  <button class="btn btn-secondary" id="subButton" onclick="player.onBetClick()">SAVE BET</button>
+                    <br> <!-- Delete it later-->
+                  <button class="btn btn-secondary" id="bet-btn" onclick="player.onBetClick()">SET BET</button>
                 </div>
-              </div> 
-            
-            
-            <button class="btn play" id="play-btn" onclick="onPlayPressed()">PLAY</button>
-
-
-            <div class="bet">No bet for now</div>
-            <div class="result">No results for now</div>
+                <br> <!-- Delete it later-->
+              </div>     
+              <br> <!-- Delete it later-->  
+            <button class="btn play" id="play-btn" onclick="onPlayClick()">PLAY</button>
+            <br> <!-- Delete it later-->
+            <br> <!-- Delete it later-->
+            <div class="bet">No bets for now. Bet some $ and chose one color</div>
+            <br> <!-- Delete it later-->
+            <div class="result">This is your first spin! Good luck</div>
         </div>
         <div class="rightSide">
             <canvas id="roulette" width="500px" height="500px"></canvas>
@@ -37,22 +42,23 @@
     <div class="bottom row">
         <div class="red column-vertical">
             <h2>x2</h2>
-            <button class="btn btn-red" onclick="player.onColorClick('#ff6b6b')">RED</button>
+            <button class="btn btn-red colorBtn" id="colorBtn" onclick="player.onColorClick('#ff6b6b')">RED</button>
         </div>
         <div class="black column-vertical">
             <h2>x2</h2>
-            <button class="btn btn-black" onclick="player.onColorClick('#222f3e')">BLACK</button>
+            <button class="btn btn-black colorBtn" id="colorBtn" onclick="player.onColorClick('#222f3e')">BLACK</button>
         </div>
         <div class="blue column-vertical">
             <h2>x5</h2>
-            <button class="btn btn-blue" onclick="player.onColorClick('#2e86de')">BLUE</button>
+            <button class="btn btn-blue colorBtn" id="colorBtn" onclick="player.onColorClick('#2e86de')">BLUE</button>
         </div>
         <div class="red column-vertical">
             <h2>x50</h2>
-            <button class="btn btn-gold" onclick="player.onColorClick('#ff9f43')">GOLD</button>
+            <button class="btn btn-gold colorBtn" id="colorBtn" onclick="player.onColorClick('#ff9f43')">GOLD</button>
         </div>
     </div>
 
+    <script src="disable buttons.js"></script>
     <script src="game.js"></script>
     <script src="canvas.js"></script>
     

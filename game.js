@@ -23,6 +23,8 @@ class Player {
         } else if (color == "#ff9f43"){
             betStatus.innerHTML = `Your bet is ${this.betMade} for GOLD`;
         }
+        disableColorButtons();
+        enablePlayButton();
     } 
 
     onBetClick() {
@@ -32,6 +34,8 @@ class Player {
         this.balance -= this.betMade;
         playerBalance.innerHTML = this.balance;
         this.setUserInput(0);
+        disableBetButton();
+        enableColorButtons();
     }
     
     setUserInput(number) {
