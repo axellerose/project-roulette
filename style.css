@@ -1,8 +1,17 @@
 body {
     margin: 0;
     padding: 1em;
-    background-color: #1c1c1c;
+    background-color: black;
+    background-image: url(./img/bg3.jpg);
+    background-color: #5f27cd;
+    background-size: inherit;
+    background-repeat: repeat;
     color: #c8d6e5;
+    font-family: 'Varela Round', sans-serif;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
 }
 
 .main {

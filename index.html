@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette of Colors</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main">
         <div class="leftSide column-vertical">
             <h1>Roulette of Colors</h1>
-            <div class="balance">$<span>1000</span></div>
+            <div class="playerName">player</div>
+            <div class="balance">$<span id="cash">1000</span></div>
+            
             <input class="make-bet" type="number" min="0" placeholder="0">
             <button class="btn play" value="spin" onclick="spin()">PLAY</button>
+
+
             <div class="bet">No bet for now</div>
             <div class="result">No results for now</div>
         </div>
@@ -31,9 +36,9 @@
             <h2>x2</h2>
             <button class="btn btn-black" onclick="player.onColorClick('#222f3e')">BLACK</button>
         </div>
-        <div class="btn column-vertical">
+        <div class="blue column-vertical">
             <h2>x5</h2>
-            <button class="btn btn-blue" onclick="player.onColorClick('#2e86de;')">BLUE</button>
+            <button class="btn btn-blue" onclick="player.onColorClick('#2e86de')">BLUE</button>
         </div>
         <div class="red column-vertical">
             <h2>x100</h2>

@@ -21,11 +21,16 @@ var colors = [
     "#ff6b6b", "#222f3e", "#2e86de",
     "#ff6b6b", "#222f3e", "#2e86de",
 ];
+// Set up new player
+let player = new Player("Alex", 1000);
+let playerName = document.querySelector(".playerName");
+playerName.innerHTML = player.name; //show name
+let playerBalance = document.querySelector(".balance span");
+playerBalance.innerHTML = player.balance; //show balance
 
-let player = new Player("alex", 10000);
 
-var startAngle = 0;
-var arc = Math.PI / 18;
+let startAngle = 0;
+let arc = Math.PI / 18;
 
 function drawRouletteWheel() {
     const ctx = canvas.getContext("2d");
@@ -104,7 +109,7 @@ function showResult(index){
         result.innerHTML = "Winner sector is: RED";
     } else if (colors[index] == "#2e86de") {
         result.innerHTML = "Winner sector is: BLUE";
-    } else if (colors[index] == "gold") {
+    } else if (colors[index] == "#ff9f43") {
         result.innerHTML = "Winner sector is: GOLD";
     }
 }

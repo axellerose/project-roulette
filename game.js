@@ -1,9 +1,10 @@
 class Player {
     constructor (name, balance) {
         this.name = name;
-        this.balance = document.querySelectorAll(".balance span").innerHTML;
+        this.balance = balance;
         this.betMade = 0;
         this.colorPressed = 'no color pressed';   
+
     }
     onColorClick(color) {
         let blue = "#2e86de";
@@ -19,7 +20,7 @@ class Player {
         } else if (color == "#222f3e"){
             betStatus.innerHTML = `Your bet is BLACK`;
         } else if (color == "#ff9f43"){
-            betStatus.innerHTML = `Your bet is BLUE`;
+            betStatus.innerHTML = `Your bet is GOLD`;
         }
     } 
 }
