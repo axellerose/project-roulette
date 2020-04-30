@@ -15,14 +15,14 @@
             <div class="balance">$<span id="cash">1000</span></div>
 
             <div class="input-group mb-3">
-                <input class="make-bet" id="userInput" type="number" min="0" placeholder="0">
+                <input class="make-bet" id="userInput" type="number" min="10" placeholder="10">
                 <div class="save-bet">
                   <button class="btn btn-secondary" id="subButton" onclick="player.onBetClick()">SAVE BET</button>
                 </div>
               </div> 
             
             
-            <button class="btn play" value="spin" onclick="onPlayPressed()">PLAY</button>
+            <button class="btn play" id="play-btn" onclick="onPlayPressed()">PLAY</button>
 
 
             <div class="bet">No bet for now</div>

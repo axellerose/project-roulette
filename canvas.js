@@ -68,7 +68,6 @@ function onPlayPressed() {
     spinTime = 0;
     spinTimeTotal = Math.random() * 3 + 4 * 1000;
     rotateWheel();
-    console.log(player.colorPressed);
 }
 
 function rotateWheel(){
@@ -119,17 +118,22 @@ function checkWinner(index){
     if (colors[index] == player.colorPressed){
         alert("You win!");
         //Add points
-        if (player.colorPressed == "#222f3e" || "#ff6b6b") {
-            player.balance += player.betMade * 2;
+        if (player.colorPressed == "#222f3e" || player.colorPressed == "#ff6b6b") {
+             player.balance += player.betMade * 2;
+             playerBalance.innerHTML = player.balance;
         } else if (player.colorPressed == "#2e86de") {
             player.balance += player.betMade * 5;
+            playerBalance.innerHTML = player.balance;
         } else if (player.colorPressed == "#ff9f43") {
-            player.balance += player.betMade * 50; 
+            player.balance += player.betMade * 50;
+            playerBalance.innerHTML = player.balance; 
         }
-        playerBalance.innerHTML = player.balance;
     } else {
         alert("You loose!");
-
+        if (player.balance == 0){
+            let playButton = document.querySelector("#play-btn");
+            playButton.remove();
+        }
     }
 }
 
