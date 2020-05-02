@@ -53,14 +53,12 @@ function drawRouletteWheel() {
         ctx.fill();
     }
     ctx.drawImage(logoImg, 250 - 100, 250 - 100, 200, 200);
-    //Draw arrow
+    //Draw Triangle
     ctx.fillStyle = "#c8d6e5";
     ctx.beginPath();
     ctx.moveTo(250 - 25, 250 - (outsideRadius + 25));
     ctx.lineTo(250 + 25, 250 - (outsideRadius + 25));
-
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 25)); //
-
+    ctx.lineTo(250 + 0, 250 - (outsideRadius - 25));
     ctx.lineTo(250 - 25, 250 - (outsideRadius + 25));
     ctx.fill();
 }
@@ -151,6 +149,8 @@ function showImgWin(){
     image.style.display = "flex";
     setTimeout("hideWin()", 5000);
 }
+
+// Refactor showImg(img1, img2)
 function hideWin(){
     let image = document.getElementById("win");
     let main = document.querySelector(".main");
@@ -184,5 +184,4 @@ window.addEventListener("load", event => {
     disableColorButtons();
     disablePlayButton();
     enableBetButton();
-    
 });

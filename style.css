@@ -36,8 +36,10 @@ h2 {
     flex-wrap: wrap;
 }
 
-.image img{
-    max-width: 75%;
+.image img {
+    display:block;
+    margin:auto;
+    margin-top: 30vh;
 }
 
 .btn {
