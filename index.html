@@ -6,14 +6,18 @@
     <title>Roulette of Colors</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon-16x16.png"/>
 </head>
 <body>
+                        <!-----------WIN or LOOSE images --------------->
+                        <div class="image" id="win" style="display: none"><img src=“../../img/win.png></div>
+                        <div class="image" id="lose" style="display: none"><img src=“../../img/lose.png></div>
     <div class="main">
         <div class="leftSide column-vertical">
             <h1>Roulette of Colors</h1>
             <div class="playerName">player</div>
             <br> <!-- Delete it later-->
-            <div class="balance">Current ballance: $<span id="cash">1000</span></div>
+            <div class="balance">Current balance: $<span id="cash">1000</span></div>
             <br> <!-- Delete it later-->
             <br> <!-- Delete it later-->
             <div class="input-group">
@@ -32,6 +36,9 @@
             <div class="bet">No bets for now. Bet some $ and chose one color</div>
             <br> <!-- Delete it later-->
             <div class="result">This is your first spin! Good luck</div>
+
+
+
         </div>
         <div class="rightSide">
             <canvas id="roulette" width="500px" height="500px"></canvas>
@@ -42,24 +49,24 @@
     <div class="bottom row">
         <div class="red column-vertical">
             <h2>x2</h2>
-            <button class="btn btn-red colorBtn" id="colorBtn" onclick="player.onColorClick('#ff6b6b')">RED</button>
+            <button class="btn btn-red" id="colorBtn" onclick="player.onColorClick('#ff6b6b')">RED</button>
         </div>
         <div class="black column-vertical">
             <h2>x2</h2>
-            <button class="btn btn-black colorBtn" id="colorBtn" onclick="player.onColorClick('#222f3e')">BLACK</button>
+            <button class="btn btn-black" id="colorBtn" onclick="player.onColorClick('#222f3e')">BLACK</button>
         </div>
         <div class="blue column-vertical">
             <h2>x5</h2>
-            <button class="btn btn-blue colorBtn" id="colorBtn" onclick="player.onColorClick('#2e86de')">BLUE</button>
+            <button class="btn btn-blue" id="colorBtn" onclick="player.onColorClick('#2e86de')">BLUE</button>
         </div>
         <div class="red column-vertical">
             <h2>x50</h2>
-            <button class="btn btn-gold colorBtn" id="colorBtn" onclick="player.onColorClick('#ff9f43')">GOLD</button>
+            <button class="btn btn-gold" id="colorBtn" onclick="player.onColorClick('#ff9f43')">GOLD</button>
         </div>
     </div>
 
     <script src="disable buttons.js"></script>
-    <script src="game.js"></script>
+    <script src="player.js"></script>
     <script src="canvas.js"></script>
     
 </body>

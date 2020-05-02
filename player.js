@@ -8,10 +8,10 @@ class Player {
 
     }
     onColorClick(color) {
-        let blue = "#2e86de";
-        let red = "#ff6b6b";
-        let black = "#222f3e";
-        let gold = "#ff9f43";
+        //let blue = "#2e86de";
+        //let red = "#ff6b6b";
+        //let black = "#222f3e";
+        //let gold = "#ff9f43";
         let betStatus = document.querySelector(".bet");
         this.colorPressed = color;
         if (color == "#2e86de"){

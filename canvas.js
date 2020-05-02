@@ -119,7 +119,6 @@ function showResult(index){
 //Check if two colors are the same
 function checkWinner(index){
     if (colors[index] == player.colorPressed){
-        alert("You win!");
         //Add points
         if (player.colorPressed == "#222f3e" || player.colorPressed == "#ff6b6b") {
              player.balance += player.betMade * 2;
@@ -131,15 +130,52 @@ function checkWinner(index){
             player.balance += player.betMade * 50;
             playerBalance.innerHTML = player.balance; 
         }
+        showImgWin();
     } else {
-        alert("You loose!");
+
         if (player.balance == 0){
             let playButton = document.querySelector("#play-btn");
             playButton.remove();
         }
+        showImgLose();
     }
 }
 
+function showImgWin(){
+    let image = document.getElementById("win");
+    let main = document.querySelector(".main");
+    let bottom = document.querySelector(".bottom");
+    bottom.style.display = "none";
+    main.style.display = "none";
+    image.style.display = "flex";
+    setTimeout("hideWin()", 5000);
+}
+function hideWin(){
+    let image = document.getElementById("win");
+    let main = document.querySelector(".main");
+    let bottom = document.querySelector(".bottom");
+    main.style.display = "flex";
+    bottom.style.display = "flex";
+    image.style.display = "none";
+}
+
+function showImgLose(){
+    let image = document.getElementById("lose");
+    let main = document.querySelector(".main");
+    let bottom = document.querySelector(".bottom");
+    bottom.style.display = "none";
+    main.style.display = "none";
+    image.style.display = "flex";
+    setTimeout("hideLose()", 5000);
+}
+function hideLose(){
+    let image = document.getElementById("lose");
+    let main = document.querySelector(".main");
+    let bottom = document.querySelector(".bottom");
+    main.style.display = "flex";
+    bottom.style.display = "flex";
+    image.style.display = "none";
+}
 
 document.getElementById('bet-btn').addEventListener('click', userInput, false);
 window.addEventListener("load", event => {
