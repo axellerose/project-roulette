@@ -1,11 +1,6 @@
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
+input:focus,select:focus,textarea:focus,button:focus {
     outline: none;
-}
-image {
 }
 
 body {
@@ -24,7 +19,10 @@ h1 {
     font-family: 'Varela Round', sans-serif;
 }
 h2 {
+    font-family: 'Varela Round', sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 .main {
     display: flex;
@@ -35,7 +33,7 @@ h2 {
 .bottom {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .image img{
@@ -46,13 +44,15 @@ h2 {
     font-family: 'Varela Round', sans-serif;
     width: 90%;
     border-radius: 5px;
+    border: 1px solid #c8d6e5;
     padding: 15px 25px;
     font-size: 22px;
     text-decoration: none;
     margin: 10px;
     color: #fff;
     position: relative;
-    display: inline-block;
+    text-align: center;
+
   }
 
 .btn:active {
@@ -164,8 +164,11 @@ h2 {
 
 .red, .black, .blue, .gold {
     max-width: 100%;
-    width: 100%;
+    width: 33vw;
+    padding: 0;
+    margin: 0;
 }
+
 /*
 blue - #2e86de;
 red - #ff6b6b;

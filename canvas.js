@@ -31,6 +31,7 @@ playerBalance.innerHTML = player.balance; //show balance
 
 let startAngle = 0;
 let arc = Math.PI / 18;
+let logoImg = document.querySelector("#logo");
 
 function drawRouletteWheel() {
     const ctx = canvas.getContext("2d");
@@ -39,6 +40,7 @@ function drawRouletteWheel() {
     ctx.clearRect(0,0,500,500);
     ctx.strokeStyle = "#222f3e";
     ctx.lineWidth = 2;
+    
     
     for (let i = 0; i < 36; i++){
         let angle = startAngle + i * arc;
@@ -50,17 +52,16 @@ function drawRouletteWheel() {
         ctx.stroke();
         ctx.fill();
     }
+    ctx.drawImage(logoImg, 250 - 100, 250 - 100, 200, 200);
     //Draw arrow
     ctx.fillStyle = "#c8d6e5";
     ctx.beginPath();
-    ctx.moveTo(250 - 7, 250 - (outsideRadius + 8));
-    ctx.lineTo(250 + 7, 250 - (outsideRadius + 8));
-    ctx.lineTo(250 + 7, 250 - (outsideRadius - 8));
-    ctx.lineTo(250 + 12, 250 - (outsideRadius - 8));
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 20));
-    ctx.lineTo(250 - 12, 250 - (outsideRadius - 8));
-    ctx.lineTo(250 - 7, 250 - (outsideRadius - 8));
-    ctx.lineTo(250 - 7, 250 - (outsideRadius + 8));
+    ctx.moveTo(250 - 25, 250 - (outsideRadius + 25));
+    ctx.lineTo(250 + 25, 250 - (outsideRadius + 25));
+
+    ctx.lineTo(250 + 0, 250 - (outsideRadius - 25)); //
+
+    ctx.lineTo(250 - 25, 250 - (outsideRadius + 25));
     ctx.fill();
 }
 
@@ -183,4 +184,5 @@ window.addEventListener("load", event => {
     disableColorButtons();
     disablePlayButton();
     enableBetButton();
+    
 });
