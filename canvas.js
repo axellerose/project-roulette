@@ -27,6 +27,9 @@ playerName.innerHTML = player.name; //show name
 let playerBalance = document.querySelector(".balance span");
 playerBalance.innerHTML = player.balance; //show balance
 
+//Set userInput limits
+let userInput = document.getElementById('userInput')
+userInput.setAttribute("max",player.balance);
 
 
 let startAngle = 0;
@@ -132,7 +135,7 @@ function checkWinner(index){
         showImgWin();
     } else {
 
-        if (player.balance == 0){
+        if (player.balance <= 0){
             let playButton = document.querySelector("#play-btn");
             playButton.remove();
         }

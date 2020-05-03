@@ -33,7 +33,7 @@ class Player {
         this.betMade = userInput;
         this.balance -= this.betMade;
         playerBalance.innerHTML = this.balance;
-        this.setUserInput(0);
+        this.setUserInput(50);
         disableBetButton();
         enableColorButtons();
     }
