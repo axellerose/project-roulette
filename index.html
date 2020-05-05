@@ -9,65 +9,78 @@
     <link rel="shortcut icon" type="image/png" href="/img/favicon-16x16.png"/>
 </head>
 <body>
-                        <!-----------WIN or LOOSE images --------------->
-                        <div class="image" id="win" style="display: none"><img src=“../../img/win.png></div>
-                        <div class="image" id="lose" style="display: none"><img src=“../../img/lose.png></div>
-    <div class="main">
-        <div class="leftSide column-vertical">
-            <h1>Roulette of Colors</h1>
-            <div class="playerName">player</div>
+    <div class="wraper">
+        <button id="pause-music" onclick="pauseMusic()">Pause</button>
+        <button id="play-music" onclick="playMusic()" style="display: none;">Play</button>
+                            <!-----------WIN or LOOSE images --------------->
+                            <div class="image" id="win" style="display: none"><img src=“../../img/win.png></div>
+                            <div class="image" id="lose" style="display: none"><img src=“../../img/lose.png></div>
+        <div class="main">
+            <div class="leftSide column-vertical">
+                <h1>Roulette of Colors</h1>
+                <div class="playerName">player</div>
 
-            <div class="balance">$ <span id="cash">1000</span></div>
+                <div class="balance">$ <span id="cash">1000</span></div>
 
-            <div class="input-group">
-                <input class="make-bet" id="userInput" type="number" min="50" max=player.balance step="50" value="50" placeholder="50">
+                <div class="input-group">
+                    <input class="make-bet" id="userInput" type="number" min="50" max=player.balance step="50" value="50" placeholder="50">
 
-                <div class="save-bet">
+                    <div class="save-bet">
 
-                  <button class="btn btn-secondary" id="bet-btn" onclick="player.onBetClick()">SET BET</button>
-                </div>
+                    <button class="btn btn-secondary" id="bet-btn" onclick="player.onBetClick(); btnPressed()">SET BET</button>
+                    </div>
 
-            </div>     
+                </div>     
 
-            <button class="btn play" id="play-btn" onclick="onPlayClick()">PLAY</button>
-            <br> <!-- Delete it later-->
-            <br> <!-- Delete it later-->
-            <div class="bet">No bets for now. Bet some $ and chose one color</div>
-            <br> <!-- Delete it later-->
-            <div class="result">This is your first spin! Good luck</div>
+                <button class="btn play" id="play-btn" onclick="onPlayClick(); btnSpin()">PLAY</button>
+                <br> <!-- Delete it later-->
+                <br> <!-- Delete it later-->
+                <div class="bet">No bets for now. Bet some $ and chose one color</div>
+                <br> <!-- Delete it later-->
+                <div class="result">This is your first spin! Good luck</div>
 
 
 
+            </div>
+            <div class="rightSide">
+                <canvas id="roulette" width="500px" height="500px"></canvas>
+            </div>
         </div>
-        <div class="rightSide">
-            <canvas id="roulette" width="500px" height="500px"></canvas>
+
+        <!------------------------  BUTTONS TO MAKE A BET  ------------------------------>
+        <div class="bottom row">
+            <div class="red column-vertical">
+                <h2>x2</h2>
+                <button class="btn btn-red" id="colorBtn" onclick="player.onColorClick('#ff6b6b'); btnPressed()">RED</button>
+            </div>
+            <div class="black column-vertical">
+                <h2>x2</h2>
+                <button class="btn btn-black" id="colorBtn" onclick="player.onColorClick('#222f3e'); btnPressed()">BLACK</button>
+            </div>
+            <div class="blue column-vertical">
+                <h2>x5</h2>
+                <button class="btn btn-blue" id="colorBtn" onclick="player.onColorClick('#2e86de'); btnPressed()">BLUE</button>
+            </div>
+            <div class="gold column-vertical">
+                <h2>x50</h2>
+                <button class="btn btn-gold" id="colorBtn" onclick="player.onColorClick('#ff9f43'); btnPressed()">GOLD</button>
+            </div>
         </div>
+        <div style="visibility: hidden"><img id="logo" src="/img/ylh.png"></div>
     </div>
-
-    <!------------------------  BUTTONS TO MAKE A BET  ------------------------------>
-    <div class="bottom row">
-        <div class="red column-vertical">
-            <h2>x2</h2>
-            <button class="btn btn-red" id="colorBtn" onclick="player.onColorClick('#ff6b6b')">RED</button>
-        </div>
-        <div class="black column-vertical">
-            <h2>x2</h2>
-            <button class="btn btn-black" id="colorBtn" onclick="player.onColorClick('#222f3e')">BLACK</button>
-        </div>
-        <div class="blue column-vertical">
-            <h2>x5</h2>
-            <button class="btn btn-blue" id="colorBtn" onclick="player.onColorClick('#2e86de')">BLUE</button>
-        </div>
-        <div class="gold column-vertical">
-            <h2>x50</h2>
-            <button class="btn btn-gold" id="colorBtn" onclick="player.onColorClick('#ff9f43')">GOLD</button>
-        </div>
-    </div>
-    <div style="visibility: hidden"><img id="logo" src="/img/ylh.png"></div>
-
-    <script src="disable buttons.js"></script>
-    <script src="player.js"></script>
-    <script src="canvas.js"></script>
+    <audio id="bg-music" loop="true" autostart="true">
+        <source src="/sounds/bg-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="btn-sound">
+        <source src="/sounds/btnPressed.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="btn-spin">
+        <source src="/sounds/spin.wav" type="audio/wav">
+    </audio>
+    <script src="/js/sounds.js"></script>
+    <script src="/js/disable buttons.js"></script>
+    <script src="/js/player.js"></script>
+    <script src="/js/canvas.js"></script>
     
 </body>
 </html>
