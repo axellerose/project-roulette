@@ -3,9 +3,15 @@ input:focus,select:focus,textarea:focus,button:focus {
     outline: none;
 }
 
+video {
+    z-index: -2;
+    filter: brightness(20%);
+    position: fixed;
+    width: 100%;
+}
+
 body {
     margin: 0;
-    padding: 1em;
     background-color: black;
     background-image: url(./img/bg3.jpg);
     background-color: #5f27cd;

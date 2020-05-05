@@ -182,10 +182,13 @@ function hideLose(){
     image.style.display = "none";
 }
 
+//video
+
 document.getElementById('bet-btn').addEventListener('click', userInput, false);
 window.addEventListener("load", event => {
     drawRouletteWheel();
     disableColorButtons();
     disablePlayButton();
     enableBetButton();
+
 });
