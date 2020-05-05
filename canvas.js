@@ -34,7 +34,7 @@ userInput.setAttribute("max",player.balance);
 
 let startAngle = 0;
 let arc = Math.PI / 18;
-let logoImg = document.querySelector("#logo");
+
 
 function drawRouletteWheel() {
     const ctx = canvas.getContext("2d");
@@ -55,6 +55,7 @@ function drawRouletteWheel() {
         ctx.stroke();
         ctx.fill();
     }
+    let logoImg = document.querySelector("#logo");
     ctx.drawImage(logoImg, 250 - 100, 250 - 100, 200, 200);
     //Draw Triangle
     ctx.fillStyle = "#c8d6e5";
