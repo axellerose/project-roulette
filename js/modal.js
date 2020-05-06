@@ -5,30 +5,27 @@ let modal = document.getElementById("myModal");
 let btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
+let start = document.querySelector("#start-btn");
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-};
+
+function showModule () {
+    modal.style.display = "block";
+    document.querySelector(".main").style.display = "none";
+}
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+start.onclick = function() {
   modal.style.display = "none";
+  document.querySelector(".main").style.display = "flex";
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal.style.display = "block";
   }
 };
-
-function onStartClick() {
-    player.name == document.querySelector("#player-name-input")
-    
-    console.log(player.name);
-}
 
 function changeName() {
     player.name = document.querySelector("#player-name-input").value;

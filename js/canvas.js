@@ -17,7 +17,7 @@ var colors = [
 // Set up new player
 
 
-let player = new Player("newPlayer", 1500);
+let player = new Player("Daniel Ocean", 1000);
 
 let playerName = document.querySelector(".playerName");
 playerName.innerHTML = player.name; //show name
@@ -27,6 +27,7 @@ playerBalance.innerHTML = player.balance; //show balance
 //Set userInput limits
 let userInput = document.getElementById('userInput')
 userInput.setAttribute("max",player.balance);
+
 
 
 let startAngle = 0;
@@ -113,7 +114,8 @@ function showResult(index){
     } else if (colors[index] == "#ff9f43") {
         result.innerHTML = "Winner sector is: GOLD";
     }
-    document.querySelector(".bet").innerHTML = "Make a new bet and press PLAY"; //Reset bet status
+    document.querySelector(".bet").innerHTML = "Make a new bet and press PLAY";
+    
 }
 
 //Check if two colors are the same
@@ -139,6 +141,7 @@ function checkWinner(index){
         }
         showImgLose();
     }
+    userInput.setAttribute("max",player.balance); //Reset bet status
 }
 
 function showImgWin(){
@@ -180,10 +183,16 @@ function hideLose(){
 }
 
 document.getElementById('bet-btn').addEventListener('click', userInput, false);
+  //add event listener to prevent keyboard entry
+  const mouseOnlyNumberInputField = document.querySelector(".mouse-only-number-input");
+  mouseOnlyNumberInputField.addEventListener("keypress", (event) => {
+    event.preventDefault();
+  })
 window.addEventListener("load", event => {
     drawRouletteWheel();
     disableColorButtons();
     disablePlayButton();
     enableBetButton();
     playMusic();
+    showModule();
 });

@@ -10,19 +10,21 @@
 </head>
 <body>
     <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Start Game</button>
+    <button id="myBtn" style="display: none;">Start Game</button>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
-        <span class="close">&times;</span>
+  
         <p>Fill in some data to start the game</p>
-        <input class="modal-input" id="player-name-input" xplaceholder="Daniel Ocean" oninput="changeName()">
-        <input class="modal-input" id="player-balance-input" type="number" 
-                min="1000" max="5000" placeholder="1000" step="1000" oninput="changeBalance()">
-        <button type="submit" id="start-game" onclick="onStartClick()">Start</button>
+       <div class="input-group-modal">
+            <input class="modal-input" id="player-name-input" placeholder="Daniel Ocean" oninput="changeName()">
+            <input class="modal-input mouse-only-number-input" id="player-balance-input" type="number" 
+                    min="1000" max="5000" placeholder="1000" step="1000" oninput="changeBalance()" value="1000">
+            <button type="submit" id="start-btn">Start</button>
+        </div>
     </div>
 
     </div>
@@ -50,10 +52,10 @@
                 </div>     
 
                 <button class="btn play" id="play-btn" onclick="onPlayClick(); btnSpin()">PLAY</button>
- 
-                <div class="bet" id="text">No bets for now. Bet some $ and chose one color</div>
-                <div class="result" id="text">This is your first spin! Good luck</div>
-
+                <div class="wrap-text">
+                    <div class="bet" id="text">No bets for now. Bet some $ and chose one color</div>
+                    <div class="result" id="text">This is your first spin! Good luck</div>
+                </div>
 
 
             </div>
