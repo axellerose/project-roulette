@@ -15,7 +15,10 @@ var colors = [
     "#ff6b6b", "#222f3e", "#2e86de",
 ];
 // Set up new player
-let player = new Player("Player One", 1500);
+
+
+let player = new Player("newPlayer", 1500);
+
 let playerName = document.querySelector(".playerName");
 playerName.innerHTML = player.name; //show name
 let playerBalance = document.querySelector(".balance span");

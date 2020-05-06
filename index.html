@@ -9,6 +9,23 @@
     <link rel="shortcut icon" type="image/png" href="/img/favicon-16x16.png"/>
 </head>
 <body>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Start Game</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Fill in some data to start the game</p>
+        <input class="modal-input" id="player-name-input" xplaceholder="Daniel Ocean" oninput="changeName()">
+        <input class="modal-input" id="player-balance-input" type="number" 
+                min="1000" max="5000" placeholder="1000" step="1000" oninput="changeBalance()">
+        <button type="submit" id="start-game" onclick="onStartClick()">Start</button>
+    </div>
+
+    </div>
     <div class="wraper">
         <button id="pause-music" class="music-btn" onclick="pauseMusic()">Pause</button>
         <button id="play-music" class="music-btn" onclick="playMusic()" style="display: none">Play</button>
@@ -23,7 +40,7 @@
                 <div class="balance">$ <span id="cash">1000</span></div>
 
                 <div class="input-group">
-                    <input class="make-bet" id="userInput" type="number" min="50" max="player.balance" step="50" value="50" placeholder="50">
+                    <input class="make-bet" id="userInput" type="number" min="50" step="50" value="50" placeholder="50">
 
                     <div class="save-bet">
 
@@ -76,6 +93,7 @@
         <source src="/sounds/spin.wav" type="audio/wav">
     </audio>
     <script src="/js/sounds.js"></script>
+    <script src="/js/modal.js"></script>
     <script src="/js/disable buttons.js"></script>
     <script src="/js/player.js"></script>
     <script src="/js/canvas.js"></script>

@@ -1,12 +1,12 @@
 //BG music
 let pauseBtn = document.getElementById("pause-music");
 let playBtn = document.getElementById("play-music");
-var music = document.getElementById("bg-music");
+let music = document.getElementById("bg-music");
 
 
 function playMusic() {
-    
-    music.volume = 0.05;
+
+    music.volume = 0;
     music.play();
     playBtn.style.display = "none";
     pauseBtn.style.display = "block";
