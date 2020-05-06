@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class="wraper">
-        <button id="pause-music" onclick="pauseMusic()">Pause</button>
-        <button id="play-music" onclick="playMusic()" style="display: none;">Play</button>
+        <button id="pause-music" class="music-btn" onclick="pauseMusic()">Pause</button>
+        <button id="play-music" class="music-btn" onclick="playMusic()" style="display: none">Play</button>
                             <!-----------WIN or LOOSE images --------------->
                             <div class="image" id="win" style="display: none"><img src=“../../img/win.png></div>
                             <div class="image" id="lose" style="display: none"><img src=“../../img/lose.png></div>
@@ -23,21 +23,19 @@
                 <div class="balance">$ <span id="cash">1000</span></div>
 
                 <div class="input-group">
-                    <input class="make-bet" id="userInput" type="number" min="50" max=player.balance step="50" value="50" placeholder="50">
+                    <input class="make-bet" id="userInput" type="number" min="50" max="player.balance" step="50" value="50" placeholder="50">
 
                     <div class="save-bet">
 
-                    <button class="btn btn-secondary" id="bet-btn" onclick="player.onBetClick(); btnPressed()">SET BET</button>
+                    <button class="btn" id="bet-btn" onclick="player.onBetClick(); btnPressed()">CONFIRM</button>
                     </div>
 
                 </div>     
 
                 <button class="btn play" id="play-btn" onclick="onPlayClick(); btnSpin()">PLAY</button>
-                <br> <!-- Delete it later-->
-                <br> <!-- Delete it later-->
-                <div class="bet">No bets for now. Bet some $ and chose one color</div>
-                <br> <!-- Delete it later-->
-                <div class="result">This is your first spin! Good luck</div>
+ 
+                <div class="bet" id="text">No bets for now. Bet some $ and chose one color</div>
+                <div class="result" id="text">This is your first spin! Good luck</div>
 
 
 

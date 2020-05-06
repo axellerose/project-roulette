@@ -183,6 +183,4 @@ window.addEventListener("load", event => {
     disablePlayButton();
     enableBetButton();
     playMusic();
-    
-
 });
