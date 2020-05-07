@@ -120,15 +120,15 @@ function showResult(index){
 
 //Check if two colors are the same
 function checkWinner(index){
-    if (colors[index] == player.colorPressed){
+    if (colors[index] == player.colorChosen){
         //Add points
-        if (player.colorPressed == "#222f3e" || player.colorPressed == "#ff6b6b") {
+        if (player.colorChosen == "#222f3e" || player.colorChosen == "#ff6b6b") {
              player.balance += player.betMade * 2;
              playerBalance.innerHTML = player.balance;
-        } else if (player.colorPressed == "#2e86de") {
+        } else if (player.colorChosen == "#2e86de") {
             player.balance += player.betMade * 5;
             playerBalance.innerHTML = player.balance;
-        } else if (player.colorPressed == "#ff9f43") {
+        } else if (player.colorChosen == "#ff9f43") {
             player.balance += player.betMade * 50;
             playerBalance.innerHTML = player.balance; 
         }

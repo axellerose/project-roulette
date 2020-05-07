@@ -4,13 +4,13 @@ class Player {
         this.name = name;
         this.balance = balance;
         this.betMade = 0;
-        this.colorPressed = 'no color pressed';   
+        this.colorChosen= 'no color pressed';   
 
     }
     onColorClick(color) {
         //Check DRY, change name color Pressed (chosen color)
         let betStatus = document.querySelector(".bet");
-        this.colorPressed = color;
+        this.colorChosen = color;
         if (color == "#2e86de"){
             betStatus.innerHTML = `Your bet is ${this.betMade} for BLUE`;
         } else if (color == "#ff6b6b"){

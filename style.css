@@ -18,10 +18,6 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
-.leftSide {
-    margin-left: 5vw;
-}
-
 .playerName {
     margin-top: 2vh;
     margin-left: 2vh;
@@ -241,7 +237,8 @@ h2 {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    position: fixed;
+    width: 100%;
+    max-width: 500px;
 }
 #text {
     margin: 1vw;
