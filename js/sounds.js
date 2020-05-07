@@ -5,7 +5,10 @@ let music = document.getElementById("bg-music");
 music.volume = 0.05;
 
 function playMusic() {
-    music.play();
+    music.addEventListener("canplaythrough", function() {
+        music.play();
+        console.log("music loaded")
+    });
     playBtn.style.display = "none";
     pauseBtn.style.display = "block";
 }

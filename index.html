@@ -29,8 +29,8 @@
 
     </div>
     <div class="wraper">
-        <button id="pause-music" class="music-btn" onclick="pauseMusic()">Pause</button>
-        <button id="play-music" class="music-btn" onclick="playMusic()" style="display: none">Play</button>
+        <button id="pause-music" class="music-btn" onclick="pauseMusic()" style="display: none">Pause</button>
+        <button id="play-music" class="music-btn" onclick="playMusic(); btnPressed()">Play</button>
                             <!-----------WIN or LOOSE images --------------->
                             <div class="image" id="win" style="display: none"><img src=“../../img/win.png></div>
                             <div class="image" id="lose" style="display: none"><img src=“../../img/lose.png></div>
@@ -85,7 +85,7 @@
         </div>
         <div style="visibility: hidden"><img id="logo" src="./img/ylh.png"></div>
     </div>
-    <audio id="bg-music" loop="true" autostart="true">
+    <audio id="bg-music" loop="true" autoplay>
         <source src="./sounds/bg-music.mp3" type="audio/mpeg">
     </audio>
     <audio id="btn-sound">
