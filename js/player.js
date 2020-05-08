@@ -5,18 +5,22 @@ class Player {
         this.balance = balance;
         this.betMade = 0;
         this.colorChosen= 'no color pressed';   
-
     }
+
     onColorClick(color) {
         let betStatus = document.querySelector(".bet");
         this.colorChosen = color;
-        if (color == "#2e86de"){
-            betStatus.innerHTML = `Your bet is ${this.betMade} for BLUE`;
-        } else if (color == "#ff6b6b"){
-            betStatus.innerHTML = `Your bet is ${this.betMade} for RED`;
-        } else if (color == "#222f3e"){
-            betStatus.innerHTML = `Your bet is ${this.betMade} for BLACK`;
-        } else if (color == "#ff9f43"){
+        switch (color) {
+            case "#2e86de": //blue
+                betStatus.innerHTML = `Your bet is ${this.betMade} for BLUE`;
+                break;
+            case  "#ff6b6b": //red
+                betStatus.innerHTML = `Your bet is ${this.betMade} for RED`;
+                break;
+            case "#222f3e": //black
+                betStatus.innerHTML = `Your bet is ${this.betMade} for BLACK`;
+                break;
+            case "#ff9f43": //gold
             betStatus.innerHTML = `Your bet is ${this.betMade} for GOLD`;
         }
         disableColorButtons();
@@ -25,7 +29,6 @@ class Player {
 
     onBetClick() {
         let userInput = document.getElementById('userInput').value;
-        console.log(userInput);
         this.betMade = userInput;
         this.balance -= this.betMade;
         playerBalance.innerHTML = this.balance;
