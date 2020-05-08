@@ -8,7 +8,6 @@ class Player {
 
     }
     onColorClick(color) {
-        //Check DRY, change name color Pressed (chosen color)
         let betStatus = document.querySelector(".bet");
         this.colorChosen = color;
         if (color == "#2e86de"){

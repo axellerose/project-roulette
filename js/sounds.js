@@ -1,4 +1,3 @@
-//BG music
 let pauseBtn = document.getElementById("pause-music");
 let playBtn = document.getElementById("play-music");
 let music = document.getElementById("bg-music");

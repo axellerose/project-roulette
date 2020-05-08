@@ -86,7 +86,6 @@ function stopRotateWheel() {
     var degrees = startAngle * 180 / Math.PI + 90;
     var arcd = arc * 180 / Math.PI;
     var sectorIndex = Math.floor((360 - degrees % 360) / arcd);
-    console.log(sectorIndex);
     showResult(sectorIndex);
     checkWinner(sectorIndex);
 }
@@ -96,7 +95,7 @@ function easeOut(t, b, c, d) {
     var tc = ts*t;
     return b+c*(tc + -3*ts + 3*t);
 }
-//How to not hardcode here? Use switch
+
 function showResult(index){
     let result = document.querySelector(".result");
     switch (colors[index]) {
@@ -115,7 +114,6 @@ function showResult(index){
         default:
             document.querySelector(".bet").innerHTML = "Make a new bet and press PLAY";
         }
-
     }
 
 //Check if two colors are the same
@@ -174,12 +172,12 @@ function hideLose(){
     imgLose.style.display = "none";
 }
 
-document.getElementById('bet-btn').addEventListener('click', userInput, false);
   //add event listener to prevent keyboard entry
-  const mouseOnlyNumberInputField = document.querySelector(".mouse-only-number-input");
-  mouseOnlyNumberInputField.addEventListener("keypress", (event) => {
+document.getElementById('bet-btn').addEventListener('click', userInput, false);
+    const mouseOnlyNumberInputField = document.querySelector(".mouse-only-number-input");
+    mouseOnlyNumberInputField.addEventListener("keypress", (event) => {
     event.preventDefault();
-  });
+});
 
 window.addEventListener("load", event => {
     drawRouletteWheel();
