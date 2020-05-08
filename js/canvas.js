@@ -193,6 +193,6 @@ window.addEventListener("load", event => {
     disableColorButtons();
     disablePlayButton();
     enableBetButton();
-    playMusic();
+    pauseMusic();
     showModule();
 });
