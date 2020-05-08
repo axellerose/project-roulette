@@ -14,8 +14,6 @@ var colors = [
     "#ff6b6b", "#222f3e", "#2e86de",
     "#ff6b6b", "#222f3e", "#2e86de",
 ];
-// Set up new player
-
 
 let player = new Player("Daniel Ocean", 1000);
 
@@ -24,15 +22,11 @@ playerName.innerHTML = player.name; //show name
 let playerBalance = document.querySelector(".balance span");
 playerBalance.innerHTML = player.balance; //show balance
 
-//Set userInput limits
-let userInput = document.getElementById('userInput')
+let userInput = document.getElementById('userInput'); //set user input limits
 userInput.setAttribute("max",player.balance);
-
-
 
 let startAngle = 0;
 let arc = Math.PI / 18;
-
 
 function drawRouletteWheel() {
     const ctx = canvas.getContext("2d");
@@ -88,7 +82,7 @@ function rotateWheel(){
 
 function stopRotateWheel() {
     clearTimeout(spinTimeout);
-    //Calculate sectorIndex of a sector
+    //Calculate sectorIndex
     var degrees = startAngle * 180 / Math.PI + 90;
     var arcd = arc * 180 / Math.PI;
     var sectorIndex = Math.floor((360 - degrees % 360) / arcd);
@@ -105,18 +99,24 @@ function easeOut(t, b, c, d) {
 //How to not hardcode here? Use switch
 function showResult(index){
     let result = document.querySelector(".result");
-    if (colors[index] == "#222f3e") {
-        result.innerHTML = "Winner sector is: BLACK";
-    } else if (colors[index] == "#ff6b6b") {
-        result.innerHTML = "Winner sector is: RED";
-    } else if (colors[index] == "#2e86de") {
-        result.innerHTML = "Winner sector is: BLUE";
-    } else if (colors[index] == "#ff9f43") {
-        result.innerHTML = "Winner sector is: GOLD";
+    switch (colors[index]) {
+        case "#222f3e":
+            result.innerHTML = "Winner sector is: BLACK";
+            break;
+        case "#ff6b6b":
+            result.innerHTML = "Winner sector is: RED";
+            break;
+        case "#2e86de":
+            result.innerHTML = "Winner sector is: BLUE";
+            break;
+        case "#ff9f43":
+            result.innerHTML = "Winner sector is: GOLD";
+            break;
+        default:
+            document.querySelector(".bet").innerHTML = "Make a new bet and press PLAY";
+        }
+
     }
-    document.querySelector(".bet").innerHTML = "Make a new bet and press PLAY";
-    
-}
 
 //Check if two colors are the same
 function checkWinner(index){
@@ -144,42 +144,34 @@ function checkWinner(index){
     userInput.setAttribute("max",player.balance); //Reset bet status
 }
 
+let imgWin = document.getElementById("win");
+let main = document.querySelector(".main");
+let bottom = document.querySelector(".bottom");
+let imgLose = document.getElementById("lose");
+
 function showImgWin(){
-    let image = document.getElementById("win");
-    let main = document.querySelector(".main");
-    let bottom = document.querySelector(".bottom");
     bottom.style.display = "none";
     main.style.display = "none";
-    image.style.display = "flex";
+    imgWin.style.display = "flex";
     setTimeout("hideWin()", 5000);
 }
 
-// Refactor showImg(img1, img2)
 function hideWin(){
-    let image = document.getElementById("win");
-    let main = document.querySelector(".main");
-    let bottom = document.querySelector(".bottom");
     main.style.display = "flex";
     bottom.style.display = "flex";
-    image.style.display = "none";
+    imgWin.style.display = "none";
 }
 
 function showImgLose(){
-    let image = document.getElementById("lose");
-    let main = document.querySelector(".main");
-    let bottom = document.querySelector(".bottom");
     bottom.style.display = "none";
     main.style.display = "none";
-    image.style.display = "flex";
+    imgLose.style.display = "flex";
     setTimeout("hideLose()", 5000);
 }
 function hideLose(){
-    let image = document.getElementById("lose");
-    let main = document.querySelector(".main");
-    let bottom = document.querySelector(".bottom");
     main.style.display = "flex";
     bottom.style.display = "flex";
-    image.style.display = "none";
+    imgLose.style.display = "none";
 }
 
 document.getElementById('bet-btn').addEventListener('click', userInput, false);
@@ -187,7 +179,8 @@ document.getElementById('bet-btn').addEventListener('click', userInput, false);
   const mouseOnlyNumberInputField = document.querySelector(".mouse-only-number-input");
   mouseOnlyNumberInputField.addEventListener("keypress", (event) => {
     event.preventDefault();
-  })
+  });
+
 window.addEventListener("load", event => {
     drawRouletteWheel();
     disableColorButtons();

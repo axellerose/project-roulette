@@ -2,7 +2,7 @@
 let pauseBtn = document.getElementById("pause-music");
 let playBtn = document.getElementById("play-music");
 let music = document.getElementById("bg-music");
-music.volume = 0.05;
+music.volume = 0.1;
 
 function playMusic() {
     music.play();
